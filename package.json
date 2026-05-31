@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "test": "playwright test",
+    "test:day1": "playwright test tests/day-01-app-launch.spec.ts",
+    "test:api": "playwright test tests/api-smoke.spec.ts",
     "test:headed": "playwright test --headed",
     "report": "playwright show-report"
   },

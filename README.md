@@ -26,7 +26,14 @@ npm test
 Set the app URL when needed:
 
 ```bash
-BASE_URL=http://localhost:4000 npm test
+BASE_URL=http://localhost:5173 npm test
+POS_API_URL=http://localhost:4000 npm run test:api
+```
+
+Day 1 app-launch validation:
+
+```bash
+npm run test:day1
 ```
 
 ## Structure
