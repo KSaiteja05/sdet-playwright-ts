@@ -36,6 +36,18 @@ Day 1 app-launch validation:
 npm run test:day1
 ```
 
+Day 2 login workflow:
+
+```bash
+npm run test:day2
+```
+
+Optional credential override:
+
+```bash
+TEST_EMAIL=customer@example.com TEST_PASSWORD=Password@123 npm run test:day2
+```
+
 ## Structure
 
 - `tests/`: Test specifications.

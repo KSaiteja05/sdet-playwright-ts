@@ -10,7 +10,7 @@ export class LoginPage {
   async login(email: string, password: string) {
     await this.page.getByLabel("Email").fill(email);
     await this.page.getByLabel("Password").fill(password);
-    await this.page.getByRole("button", { name: "Login" }).click();
+    await this.page.getByRole("button", { name: "Sign in" }).click();
   }
 
   async expectError(message: string) {
