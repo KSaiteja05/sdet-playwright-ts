@@ -3,7 +3,6 @@ import { expect, test } from "@playwright/test";
 test.describe("Day 1 - App Launch & Validation", () => {
   test("launches the retail app and validates the landing page", async ({ page }) => {
     await page.goto("/");
-
     await expect(page).toHaveTitle(/SDET Retail Automation Lab/);
     await expect(page).toHaveURL(/localhost|127\.0\.0\.1/);
     await expect(
