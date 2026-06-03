@@ -23,7 +23,8 @@ test.describe("Week 1 Day 2 - Login Workflow", () => {
     await loginForm.getByLabel("Password").fill(testUsers.customer.password);
     await loginForm.getByLabel("Remember me").check();
     await loginForm.getByLabel("Country").selectOption({ label: "India" });
-    await loginForm.getByRole("button", { name: "Sign in" }).click();
+    // await loginForm.getByRole("button", { name: "Sign in" }).click();
+    await page.locator('.login-form > button').click();
 
     await expect(page).toHaveURL(/\/home$/);
     await expect(
