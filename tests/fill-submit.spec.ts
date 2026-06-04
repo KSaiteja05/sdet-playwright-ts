@@ -25,4 +25,17 @@ test.describe("Login Flow" , () => {
         await expect(page.getByRole('alert')).toContainText(/invalid credentials/i);
         await expect(page.getByRole('heading', {name: /welcome/i})).not.toBeVisible();
     })
+    test("Profile Validation", async ({page}) => {
+        await page.goto('/login');
+        const log = page.getByRole('form', {name: 'login'});
+        await log.getByLabel('Email').fill(testUsers.customer.email);
+        await log.getByLabel('Password').fill(testUsers.customer.password);
+        await log.getByRole('button', {name: 'Sign in'}).click();
+
+        await page.goto('/profile');
+
+        await expect(page.getByRole('heading', {name: /profile/i})).toBeVisible();
+        await expect(page.getByText(testUsers.customer.email)).toBeVisible();
+        
+    })
 });
